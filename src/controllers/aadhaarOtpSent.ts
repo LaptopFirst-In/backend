@@ -15,12 +15,12 @@ export const registerAadhaar = async (
         "x-client-secret":
           "cfsk_ma_test_16eb5333e806bd98f531dae85fdc4365_4610ceba",
       },
-      data: { aadhaar_number: "655675523712" },
+      data: { aadhaar_number: req.body.aadhaar_number },
     };
     axios.request(options).then(function (response) {
       console.log(response.data);
       
-      return res.status(200).send({ message: response.data.message });
+      return res.status(200).send({ data:response.data });
     });
   } catch (error) {
     console.log(error);

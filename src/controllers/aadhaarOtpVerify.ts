@@ -14,7 +14,7 @@ export const verifyAaadhar = async (
           'x-client-id': 'CF10117541CO4NB3LM103MD67HR8J0',
           'x-client-secret': 'cfsk_ma_test_16eb5333e806bd98f531dae85fdc4365_4610ceba'
         },
-        data: {otp: req.headers.otp, ref_id: req.headers.ref_id}
+        data: {otp: req.body.otp, ref_id: req.body.ref_id}
       };
       axios.request(options).then(function (response) {
         return res.status(200).send({ data: response.data });
