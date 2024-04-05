@@ -1,6 +1,8 @@
 import express from "express";
-import {aadhaarData} from '../controllers/aadhaar'
+import {registerAadhaar} from '../controllers/aadhaarOtpSent'
+import { verifyAaadhar } from "../controllers/aadhaarOtpVerify";
 
 export default (router: express.Router) => {
-  router.post("/aadhaar", aadhaarData);
+  router.post("/registerAadhaar", registerAadhaar);
+  router.post("/verifyAadhaar", verifyAaadhar);
 };
