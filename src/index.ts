@@ -20,6 +20,6 @@ app.use(
 const server = http.createServer(app);
 
 server.listen(PORT, () => {
-  console.log("Server listening on port " + PORT + " http://localhost:3000/");
+  console.log("Server listening on port " + PORT );
 });
 app.use("/", router());

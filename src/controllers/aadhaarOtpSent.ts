@@ -1,6 +1,7 @@
 import express from "express";
 import axios from "axios";
-import {generateSignature} from '../helpers'
+import {generateSignature} from '../helpers';
+import config from '../config';
 export const registerAadhaar = async (
   req: express.Request,
   res: express.Response
@@ -9,12 +10,12 @@ export const registerAadhaar = async (
     const signature = generateSignature();
     const options = {
       method: 'POST',
-      url: 'https://sandbox.cashfree.com/verification/offline-aadhaar/otp',
+      url: config.cashfreeurl +'/otp',
       headers: {
         accept: 'application/json',
         'content-type': 'application/json',
-        'x-client-id': 'CF10117541CO4NB3LM103MD67HR8J0',
-        'x-client-secret': 'cfsk_ma_test_16eb5333e806bd98f531dae85fdc4365_4610ceba',
+        'x-client-id': config.cashfreeCliendId,
+        'x-client-secret': config.cashfreeClientSecret,
         "x-cf-signature": signature,
       },
       data: { aadhaar_number: req.headers.aadhaar_number },
