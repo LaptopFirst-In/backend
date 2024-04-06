@@ -8,7 +8,7 @@ const config= {
     },
   
     production: {
-      cashfreeurl: 'https://api.cashfree.com/verification',
+      cashfreeurl: 'https://api.cashfree.com/verification/offline-aadhaar',
       cashfreeCliendId:'CF623592CO1HVIE9F16DQGRB0RC0',
       cashfreeClientSecret:'cfsk_ma_prod_e3f90376066ac3a693dd97520a442150_b7333f52',
       cashfreepublickey: `-----BEGIN PUBLIC KEY-----
