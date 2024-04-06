@@ -15,4 +15,4 @@ const config= {
     },
   };
   
-  export default config.development;
+  export default config.production;
